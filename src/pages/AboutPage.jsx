@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Moonimg from '../assets/Moon.png'
 import MountainImg from '../assets/Mountain.png'
 import union from "../assets/Union.png"
-import ReflectionImg from '../assets/Reflection.png'
+import ReflectionImg from '../assets/reflection.png'
 
 const Container = styled(motion.div)`
   width: 100%;
