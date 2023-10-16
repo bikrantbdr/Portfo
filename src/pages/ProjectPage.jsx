@@ -12,6 +12,7 @@ const Container = styled(motion.div)`
   padding: 120px 0;
   min-height: 100vh;
   background-color: #f9f9f9;
+  user-select: none;
 `
 const Title = styled.h1`
   font-size: 2rem;

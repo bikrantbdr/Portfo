@@ -1,4 +1,3 @@
-import React from 'react'
 import home from '../assets/home.svg'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
@@ -17,7 +16,7 @@ border-radius: 50%;
 border: 1px solid #000;
 width: 2.5rem;
 height: 2.5rem;
-box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.676);
+box-shadow: 0 0 8px 6px rgba(209, 218, 209, 0.676);
 
 display: flex;
 justify-content: center;
@@ -28,7 +27,7 @@ cursor: pointer;
 
 &:hover{
     /* background-color: rgba(156, 169, 156, 0.685); */
-    box-shadow: 0 0 8px 6px rgba(209, 218, 209, 0.676);
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.676);
 }
 
 &>*:first-child{
@@ -45,7 +44,7 @@ const HomeButton = () => {
             transition={{ duration: 0.5, delay: 1 }}
         >
             <NavLink to="/" >
-                <img src={home} width={25} height={25} fill="#000000" />
+                <img src={home} width={20} height={20} />
             </NavLink>
         </HomeComponent>
     )

@@ -59,7 +59,7 @@ const SocialMediaComponent = ({ theme, delay = 2 }) => {
             <SocialMediaContainer>
                 <motion.div
                     initial={{ scale: 0 }}
-                    animate={{ scale: [0, 1, 1.5, 1] }}
+                    animate={{ scale: [0, 1, 5, 1] }}
                     transition={{ type: "spring", duration: 1, delay: delay + 0.4 }}
                     whileHover={{ scale: 1.1 }}
                 >
