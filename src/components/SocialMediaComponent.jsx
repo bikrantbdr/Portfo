@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { Github, Twitter, Facebook } from '../data/SVGs'
 import Theme from '../data/Theme'

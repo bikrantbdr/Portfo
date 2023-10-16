@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import SocialMediaComponent from '../components/SocialMediaComponent'
 import styled from 'styled-components'
@@ -15,7 +14,7 @@ const Container = styled(motion.div)`
   position: relative;
 
   @media (max-width: 950px) {
-    overflow-y: hidden;
+    overflow-y:  hidden;
   }
 `
 const BGimg = styled.img`
