@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import SkillSectionComponent from '../components/skillSectionComponent'
+import SkillSectionComponent from '../components/SkillSectionComponent'
 
 import figma from '../assets/logo/figma.svg'
 import canva from '../assets/logo/canva.svg'
