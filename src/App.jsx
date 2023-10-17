@@ -1,5 +1,3 @@
-import logo from "./assets/logo.png";
-
 import { Routes, Route, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";

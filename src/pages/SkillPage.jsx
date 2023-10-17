@@ -115,9 +115,16 @@ const Container = styled(motion.div)`
   justify-content: center;
   gap: 32px;
   padding: 80px 0;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
   background-color: #f9f9f9;
   user-select: none;
+
+  @media (max-width: 768px) {
+    padding: 32px 12px;
+    gap: 16px;
+  }
+
 `
 const Title = styled.h1`
   color: #000;
@@ -130,6 +137,12 @@ const Title = styled.h1`
   top: 20px;
   left: 20px;
   position:fixed;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    top: 10px;
+    left: 10px;
+  }
 `
 const Subtitle = styled.h2`
   color: #b3b3b370;
@@ -144,11 +157,16 @@ const Subtitle = styled.h2`
   top: 80px;
   left: 20px;
 
+  @media (max-width: 768px) {
+    display: none;
+  }
+
 `
 
 const SkillPage = () => {
   return (
     <Container
+    className="skillPage"
       initial={{ y: window.innerHeight }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', duration: 1.5, delay: 0.5 }}

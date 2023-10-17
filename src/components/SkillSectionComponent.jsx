@@ -7,7 +7,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   gap:64px;
-  width: 95%;
+  width: 90%;
   height:100px;
   rotate: -6deg;
   position: relative;
@@ -19,6 +19,16 @@ const Container = styled.div`
   
   background-size: cover;
   background-repeat: no-repeat;
+
+@media (max-width: 768px) {
+  width: 100%;
+  height: 40px;
+  gap: 16px;
+  background-size: contain;
+  flex-wrap: wrap;
+}
+
+
 `
 
 const Title = styled.h1`
@@ -36,6 +46,10 @@ left: 50%;
 transform: translate(-50%, -50%);
 opacity: ${props => props.showSkill ? 0 : 1};
 transition: opacity 1s ease-in-out;
+
+@media (max-width: 768px) {
+  font-size: 32px;
+}
 `
 
 const Icon = styled.img`
@@ -54,13 +68,18 @@ const Icon = styled.img`
     transition: transform 0.3s ease-in-out;
   }
 
+  @media (max-width: 768px) {
+    height: 24px;
+    width: auto;
+    object-fit: contain;
+  }
+
 `
 
 const SkillSectionComponent = ({skillType,skill, index}) => {
   const [showSkill, setShowSkill] = useState(false)
   return (
     <Container index ={index} onMouseEnter={()=>(setShowSkill(true))} onMouseLeave={()=>(setShowSkill(false))}  showSkill={showSkill}>
-      {console.log(index)}
       
         <Title showSkill={showSkill}>
       {skillType}
