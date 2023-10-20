@@ -120,9 +120,9 @@ const Container = styled(motion.div)`
   background-color: #f9f9f9;
   user-select: none;
 
-  @media (max-width: 768px) {
-    padding: 32px 12px;
-    gap: 16px;
+  @media (max-width: 960px) {
+    /* padding: 8px 8px; */
+    gap: 8px;
   }
 
 `

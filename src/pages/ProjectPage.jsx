@@ -33,6 +33,10 @@ const Subtitle = styled.h2`
   top: 80px;
   left: 20px;
 
+  @media (max-width:960px){
+    font-size:1.1rem;
+  }
+
 `
 
 const Data = [

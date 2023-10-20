@@ -8,26 +8,46 @@ const Container = styled.div`
   align-items: center;
   gap:64px;
   width: 90%;
-  height:100px;
+  height:120px;
   rotate: -6deg;
   position: relative;
   cursor: pointer;
+  /* border:1px solid black; */
 
-  background-image: ${props => props.index % 2 === 0 ? `url(${bg1})` : `url(${bg2})`};
-  filter: ${props => props.showSkill ? 'grayscale(20%)' : 'grayscale(100%)'};
+  /* background-image: ${props => props.index % 2 === 0 ? `url(${bg1})` : `url(${bg2})`}; */
+  filter: ${props => props.showSkill ? 'grayscale(-10%)' : 'grayscale(100%)'};
   transition:filter 0.3s ease-in-out;
   
   background-size: cover;
   background-repeat: no-repeat;
 
+  @media (max-width:1100px){
+    height:100px;
+  }
+
 @media (max-width: 768px) {
   width: 100%;
-  height: 40px;
+  height: 80px;
   gap: 16px;
-  background-size: contain;
   flex-wrap: wrap;
 }
+@media (max-width:560px){
+    height:60px;
+    margin:2px 0;
+  }
+`
+const Background = styled.img`
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  object-fit: cover;
+  /* object-fit: cover; */
 
+  @media (max-width:1500px){
+    object-fit: contain;
+  }
 
 `
 
@@ -56,7 +76,7 @@ const Icon = styled.img`
   height: 60%;
   width: auto;
   object-fit: contain;
-  filter: grayscale(80%);
+  filter: grayscale(20%);
   
   cursor: pointer;
   opacity: ${props => props.showSkill ? 1 : 0};
@@ -80,6 +100,7 @@ const SkillSectionComponent = ({skillType,skill, index}) => {
   const [showSkill, setShowSkill] = useState(false)
   return (
     <Container index ={index} onMouseEnter={()=>(setShowSkill(true))} onMouseLeave={()=>(setShowSkill(false))}  showSkill={showSkill}>
+      <Background src={index%2==0?bg1:bg2} />
       
         <Title showSkill={showSkill}>
       {skillType}
