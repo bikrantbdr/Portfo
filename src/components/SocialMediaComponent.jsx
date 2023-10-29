@@ -61,7 +61,7 @@ const SocialMediaComponent = ({ theme, delay = 2 }) => {
                     initial={{ scale: 0 }}
                     animate={{ scale: [0, 1, 5, 1] }}
                     transition={{ type: "spring", duration: 1, delay: delay + 0.4 }}
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.1 ,duration: 1}}
                 >
                     <a href="https://www.facebook.com/bikrant.bidari" target="_blank" rel="noreferrer" style={{ color: "inherit" }}>
                         <Facebook

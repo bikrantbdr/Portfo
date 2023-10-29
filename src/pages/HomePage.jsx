@@ -55,7 +55,7 @@ const Skill = styled(Link)`
 
 const HomePage = () => {
 
-  const [active, setActive] = useState(false)
+  // const [active, setActive] = useState(false)
   return (
     <Container
       exit={{ opacity: 0, transition: { duration: 0.5, delay: 0.2 } }}
@@ -68,7 +68,6 @@ const HomePage = () => {
       >
         Bukki.
       </Logo>
-
       <About to='/about'>
         <motion.div
           initial={{
@@ -118,6 +117,8 @@ const HomePage = () => {
           Skill
         </motion.div>
       </Skill>
+
+      
     </Container >
   )
 }
