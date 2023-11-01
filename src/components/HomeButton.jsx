@@ -1,14 +1,13 @@
 import home from '../assets/home.svg'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
 
-const HomeComponent = styled(motion.div)`
+
+const HomeComponent = styled.div`
 position: fixed;
 top: 2rem;
-right:50%;
-/* transform: translateX(500px); */
-/* display: block; */
+left: 50%;
+transform: translate(-50%, 0);
 
 background-color: #FCF6F4;
 padding: 0.3rem;
@@ -39,9 +38,6 @@ cursor: pointer;
 const HomeButton = () => {
     return (
         <HomeComponent
-            initial={{ y: "-50px", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1 }}
         >
             <NavLink to="/" >
                 <img src={home} width={20} height={20} />

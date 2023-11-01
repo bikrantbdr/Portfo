@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Github, Twitter, Facebook } from '../data/SVGs'
 import Theme from '../data/Theme'
 import { motion } from 'framer-motion'
+import useWindowDimensions from '../data/windowdimensionHook'
 
 const Container = styled.div`
     position: fixed;
@@ -11,7 +12,7 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
    `
 const SocialMediaContainer = styled.div`
     margin:0.3rem 0 0 0;
@@ -21,11 +22,17 @@ const Line = styled(motion.div)`
     width: 3px;
     height: 8rem;
     background-color: ${(props) => props.color === "dark" ? Theme.secondaryText : Theme.primaryText};
+
+    @media (max-width: 768px) {
+        background-color: ${Theme.primaryText};
+    }
 `
 
 const SocialMediaComponent = ({ theme, delay = 2 }) => {
+    const {  width  } = useWindowDimensions()
     return (
         <Container>
+            {/* {console.log(height,width)} */}
             <SocialMediaContainer>
                 <motion.div
                     initial={{ scale: 0 }}
@@ -36,7 +43,7 @@ const SocialMediaComponent = ({ theme, delay = 2 }) => {
                         <Github
                             width={25}
                             height={25}
-                            fill={theme === "dark" ? Theme.secondaryText : Theme.primaryText}
+                            fill={theme === "dark" & width> 768 ? Theme.secondaryText : Theme.primaryText}
                         />
                     </a>
                 </motion.div>
@@ -51,7 +58,7 @@ const SocialMediaComponent = ({ theme, delay = 2 }) => {
                         <Twitter
                             width={25}
                             height={25}
-                            fill={theme === "dark" ? Theme.secondaryText : Theme.primaryText}
+                            fill={theme === "dark" & width> 768  ? Theme.secondaryText : Theme.primaryText}
                         />
                     </a>
                 </motion.div>
@@ -67,7 +74,7 @@ const SocialMediaComponent = ({ theme, delay = 2 }) => {
                         <Facebook
                             width={25}
                             height={25}
-                            fill={theme === "dark" ? Theme.secondaryText : Theme.primaryText}
+                            fill={theme === "dark" & width> 768  ? Theme.secondaryText : Theme.primaryText}
                         />
                     </a>
                 </motion.div>
