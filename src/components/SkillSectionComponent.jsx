@@ -12,14 +12,7 @@ const Container = styled.div`
   rotate: -6deg;
   position: relative;
   cursor: pointer;
-  /* border:1px solid black; */
 
-  /* background-image: ${props => props.index % 2 === 0 ? `url(${bg1})` : `url(${bg2})`}; */
-  filter: ${props => props.showSkill ? 'grayscale(-10%)' : 'grayscale(100%)'};
-  transition:filter 0.3s ease-in-out;
-  
-  background-size: cover;
-  background-repeat: no-repeat;
 
   @media (max-width:1100px){
     height:100px;
@@ -43,6 +36,8 @@ const Background = styled.img`
   top:0;
   left:0;
   object-fit: cover;
+  filter: ${props => props.showSkill ? 'brightness(100%)' : 'brightness(80%)'};
+  transition:filter 0.3s ease-in-out;
   /* object-fit: cover; */
 
   @media (max-width:1500px){
@@ -52,7 +47,7 @@ const Background = styled.img`
 `
 
 const Title = styled.h1`
-  color: rgba(0, 0, 0, 0.20);
+  color: #eeeeee;
 text-align: center;
 font-family: Raleway;
 font-size: 56px;
@@ -99,8 +94,8 @@ const Icon = styled.img`
 const SkillSectionComponent = ({skillType,skill, index}) => {
   const [showSkill, setShowSkill] = useState(false)
   return (
-    <Container index ={index} onMouseEnter={()=>(setShowSkill(true))} onMouseLeave={()=>(setShowSkill(false))}  showSkill={showSkill}>
-      <Background src={index%2==0?bg1:bg2} />
+    <Container index ={index} onMouseEnter={()=>(setShowSkill(true))} onMouseLeave={()=>(setShowSkill(false))}  >
+      <Background showSkill={showSkill} src={index%2==0?bg1:bg2} />
       
         <Title showSkill={showSkill}>
       {skillType}
