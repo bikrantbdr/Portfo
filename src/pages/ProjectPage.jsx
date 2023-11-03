@@ -1,7 +1,9 @@
 import ProjectComponent from '../components/ProjectComponent'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
-import carrental from "../assets/car-rental.webp"
+import tcioe from "../assets/project/tcioe.png"
+import lit from "../assets/project/lit.jpeg"
+import gericht from "../assets/project/gericht.jpeg"
 
 const Container = styled(motion.div)`
   display: flex;
@@ -41,26 +43,40 @@ const Subtitle = styled.h2`
 
 const Data = [
   {
-    title: 'Car Rental',
-    date: 'Feb 2021',
-    image: carrental,
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatem.',
+    title: 'TCIOE ',
+    date: 'July 2023',
+    image: tcioe,
+    description: 'A modern and fresh site for Thapathali campus, collaborated with my fellow students and working under EMIS unit as full stack developer. Still our ongoing project:',
     tech: ['React', 'Styled-component'],
     link: {
-      github:'https://github.com/bikrantbdr',
-      live:'https://github.com/bikrantbdr'
-    }
+      github:'https://github.com/bikrantbdr/',
+      live:'https://tcioe.edu.np/'
+    },
+    translate: '-72%',
   },
   {
-    title: 'Car Rental',
-    date: 'Feb 2021',
-    image: carrental,
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatem.',
+    title: 'Lost in tech ',
+    date: 'July 2022',
+    image: lit,
+    description: 'A website to introduce our tech fest to students. Based on React library along with other packages like react-scroll, styled-components. While working on this project i mainly learned proper file management and structuring',
     tech: ['React', 'Styled-component'],
     link: {
-      github:'https://github.com/bikrantbdr',
-      live:'https://github.com/bikrantbdr'
-    }
+      github:'https://github.com/bikrantbdr/lostintech',
+      live:'https://bikrantbdr.github.io/lostintech/'
+    },
+    translate: '-79%',
+  },
+  {
+    title: 'Resturant Page',
+    date: 'April 2022',
+    image: gericht,
+    description: 'A simple landing page made with React and CSS. Has a clean and concise introduction of restaurant along with its menu. I mainly learned to make proper reusable components',
+    tech: ['React', 'CSS'],
+    link: {
+      github:'https://github.com/bikrantbdr/react-gericht-page/',
+      live:'https://bikrantbdr.github.io/react-gericht-page/'
+    },
+    translate: '-81%',
   },
 ]
 

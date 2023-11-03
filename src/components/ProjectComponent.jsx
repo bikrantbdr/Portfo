@@ -36,11 +36,12 @@ const Image = styled.img`
     height: auto;
     object-fit: cover;
     transform: translateY(0%);
-    transition: transform 12s ease-in-out 0s;
+    transition: transform 10s ease-in-out 0s;
     /* border-radius: 16px; */
 
     &:hover {
-        transform: translateY(-80%);
+        /* transform: translateY(-77%); */
+        transform : ${props => props.item.translate ? `translateY(${props.item.translate})` : 'translateY(-50%)'};
     }
 `
 const ContentContainer = styled.div`
@@ -177,7 +178,7 @@ const ProjectComponent = ({index,item}) => {
   return (
     <Container index={index}>
         <ImageContainer>
-            <Image src={item.image} alt="image"/>
+            <Image item={item} src={item.image} alt="image"/>
         </ImageContainer>
         <ContentContainer>
             <TitleContainer>
