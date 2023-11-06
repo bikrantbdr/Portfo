@@ -219,9 +219,9 @@ const HomePage = () => {
         </motion.div>
       </Skill>
 
-      <Center active={active}>
-        <SpinnerComponent src={spinnerlogo} onClick={()=> handleActive()} alt="logo" active={active} />
-        <HelloText>Hi There</HelloText>
+      <Center active={active} onClick={()=> handleActive()}>
+        <SpinnerComponent src={spinnerlogo}  alt="logo" active={active} />
+        <HelloText>Click me</HelloText>
       </Center>
       <DarkDiv active={active} />
       {active && <Introduction active={active} />}
