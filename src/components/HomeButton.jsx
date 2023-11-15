@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 
-const HomeComponent = styled.div`
+const HomeComponent = styled(NavLink)`
 position: fixed;
 top: 2rem;
 left: 50%;
@@ -25,8 +25,7 @@ z-index:100;
 cursor: pointer;
 
 &:hover{
-    /* background-color: rgba(156, 169, 156, 0.685); */
-    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.676);
+    box-shadow: 0 0 4px 6px #75b53189;
 }
 
 &>*:first-child{
@@ -38,10 +37,10 @@ cursor: pointer;
 const HomeButton = () => {
     return (
         <HomeComponent
+        to="/"
         >
-            <NavLink to="/" >
                 <img src={home} width={20} height={20} />
-            </NavLink>
+            
         </HomeComponent>
     )
 }
