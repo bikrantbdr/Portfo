@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import tcioe from "../assets/project/tcioe.png"
 import lit from "../assets/project/lit.jpeg"
 import gericht from "../assets/project/gericht.jpeg"
+import dormden from "../assets/project/dormden.jpeg"
 
 const Container = styled(motion.div)`
   display: flex;
@@ -53,6 +54,18 @@ const Data = [
       live:'https://tcioe.edu.np/'
     },
     translate: '-72%',
+  },
+  {
+    title: 'DormDen ',
+    date: 'Jan 2023',
+    image: dormden,
+    description: 'DormDen is a platform for students to find their perfect hostel. It is a full stack project made with React, Node, Express and MongoDB. Learned to make a full stack project with proper authentication and authorization',
+    tech: ['React', 'Styled-component','Node'],
+    link: {
+      github:'https://github.com/bikrantbdr/',
+      live:'https://dormden.me/'
+    },
+    translate: '-10%',
   },
   {
     title: 'Lost in tech ',
