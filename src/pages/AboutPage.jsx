@@ -5,6 +5,7 @@ import MountainImg from '../assets/Mountain.png'
 import union from "../assets/Union.png"
 import ReflectionImg from '../assets/reflection.png'
 import arrow from '../assets/arrow.svg'
+import cv from '../assets/cv.pdf'
 
 const Container = styled(motion.div)`
   width: 100vw;
@@ -227,8 +228,12 @@ const AboutPage = () => {
         <br/>
 Trying to enjoy my life everyday. 
         </Description>
-        <ContactButton href='https://github.com/bikrantbdr' target="_blank" >
-          Contact Me
+        <ContactButton 
+         href={cv}
+         download="Bikrant_Bidari_CV.pdf"
+
+        >
+          Get CV
         </ContactButton>
       </DescriptionContainer>
 

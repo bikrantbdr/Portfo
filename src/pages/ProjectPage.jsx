@@ -62,7 +62,7 @@ const Data = [
     description: 'DormDen is a platform for students to find their perfect hostel. It is a full stack project made with React, Node, Express and MongoDB. Learned to make a full stack project with proper authentication and authorization',
     tech: ['React', 'Styled-component','Node'],
     link: {
-      github:'https://github.com/bikrantbdr/',
+      github:'https://github.com/bikrantbdr/TheDormDen',
       live:'https://dormden.me/'
     },
     translate: '-10%',
