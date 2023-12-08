@@ -2,7 +2,7 @@
 
 https://bidaribikrant.com.np/
 
-Ongoing work.
+Ongoing work. Tehee
 
 ToDo:
 - [ ] animation for about page
