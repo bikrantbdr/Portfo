@@ -21,90 +21,52 @@ import vscode from '../assets/logo/vscode.svg'
 
 const skillSet = [
   {
-    skillType: "UI/UX",
+    skillType: "Languages",
     skill: [
-      {
-        name: "Figma",
-        icon: figma,
-      },
-      {
-        name:'canva',
-        icon: canva,
-      }
+      { name: "JavaScript", icon: javascript },
+      { name: "TypeScript" },
+      { name: "Python" },
+      { name: "C" },
+      { name: "C++" },
+      { name: "PHP" },
+      { name: "CSS", icon: css },
     ],
   },
   {
-    skillType: "Frontend",
+    skillType: "Frameworks & Libraries",
     skill: [
-      {
-        name: "HTML",
-        icon: html,
-      },
-      {
-        name: "CSS",
-        icon: css,
-      },
-      {
-        name: "JavaScript",
-        icon: javascript,
-      },
-      {
-        name: "React",
-        icon: react,
-      },
-      {
-        name: "Next.js",
-        icon: next,
-      },
-      {
-        name: "Tailwind",
-        icon: tailwind,
-      },
-      {
-        name: "Styled-Component",
-        icon: styledcomponent,
-      },
+      { name: "ReactJS", icon: react },
+      { name: "NextJS", icon: next },
+      { name: "NodeJS", icon: node },
+      { name: "ExpressJS", icon: express },
     ],
   },
   {
-    skillType: "Backend",
+    skillType: "Databases",
     skill: [
-      {
-        name: "Node.js",
-        icon: node,
-      },
-      {
-        name: "Express.js",
-        icon: express,
-      },
-      {
-        name: "MongoDB",
-        icon: mongodb,
-      },
-      {
-        name: "Postman",
-        icon: postman,
-      },
+      { name: "MongoDB", icon: mongodb },
+      { name: "MySQL" },
     ],
   },
   {
-    skillType: "Tools",
+    skillType: "Tools & Platforms",
     skill: [
-      {
-        name: "Git",
-        icon: git,
-      },
-      {
-        name: "Github",
-        icon: github,
-      },
-      {
-        name: "VSCode",
-        icon: vscode,
-      },
+      { name: "Git", icon: git },
+      { name: "AWS (S3, EC2, RDS)" },
+      { name: "Postman", icon: postman },
+      { name: "Figma", icon: figma },
+      { name: "Canva", icon: canva },
     ],
   },
-
+  {
+    skillType: "Concepts",
+    skill: [
+      { name: "REST APIs" },
+      { name: "SEO Optimization" },
+      { name: "Agile/Scrum" },
+      { name: "Machine Learning (ML)" },
+    ],
+  },
 ]
 
 
