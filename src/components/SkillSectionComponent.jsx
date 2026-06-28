@@ -1,116 +1,77 @@
 import styled from "styled-components"
-import bg1 from '../assets/skill-bg-1.svg'
-import bg2 from '../assets/skill-bg-2.svg'
-import { useState } from "react"
-const Container = styled.div`
+
+const Card = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap:64px;
-  width: 90%;
-  height:120px;
-  rotate: -6deg;
-  position: relative;
-  cursor: pointer;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+  height: 100%;
 
-
-  @media (max-width:1100px){
-    height:100px;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   }
+`
 
-@media (max-width: 768px) {
-  width: 100%;
-  height: 80px;
-  gap: 16px;
+const Title = styled.h2`
+  color: #111;
+  font-family: Raleway;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+`
+
+const SkillContainer = styled.div`
+  display: flex;
   flex-wrap: wrap;
-}
-@media (max-width:560px){
-    height:60px;
-    margin:2px 0;
-  }
-`
-const Background = styled.img`
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  object-fit: cover;
-  filter: ${props => props.showSkill ? 'brightness(100%)' : 'brightness(80%)'};
-  transition:filter 0.3s ease-in-out;
-  /* object-fit: cover; */
-
-  @media (max-width:1500px){
-    object-fit: contain;
-  }
-
+  gap: 12px;
 `
 
-const Title = styled.h1`
-  color: #eeeeee;
-text-align: center;
-font-family: Raleway;
-font-size: 56px;
-font-style: normal;
-font-weight: 800;
-line-height: normal;
+const SkillItem = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  background: #f4f4f5;
+  border: 1px solid #e4e4e7;
+  color: #3f3f46;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s ease;
 
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-opacity: ${props => props.showSkill ? 0 : 1};
-transition: opacity 1s ease-in-out;
-
-@media (max-width: 768px) {
-  font-size: 32px;
-}
+  &:hover {
+    background: #e4e4e7;
+    color: #18181b;
+    transform: scale(1.03);
+  }
 `
 
 const Icon = styled.img`
-  height: 60%;
-  width: auto;
+  height: 20px;
+  width: 20px;
   object-fit: contain;
-  filter: grayscale(20%);
-  
-  cursor: pointer;
-  opacity: ${props => props.showSkill ? 1 : 0};
-  transition: opacity 1s ease-in-out;
-
-  &:hover {
-    filter: grayscale(0%);
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  @media (max-width: 768px) {
-    height: 24px;
-    width: auto;
-    object-fit: contain;
-  }
-
 `
 
-const SkillSectionComponent = ({skillType,skill, index}) => {
-  const [showSkill, setShowSkill] = useState(false)
+const SkillSectionComponent = ({skillType, skill}) => {
   return (
-    <Container index ={index} onMouseEnter={()=>(setShowSkill(true))} onMouseLeave={()=>(setShowSkill(false))}  >
-      <Background showSkill={showSkill} src={index%2==0?bg1:bg2} />
-      
-        <Title showSkill={showSkill}>
-      {skillType}
-      </Title>
-      
-      {skill.map((item, index) => {
-        return (
-          <Icon src={item.icon} key={index} showSkill={showSkill} />
-        )
-
-      })}
-      
-      
-      
-    </Container>
+    <Card>
+      <Title>{skillType}</Title>
+      <SkillContainer>
+        {skill.map((item, idx) => (
+          <SkillItem key={idx}>
+            {item.icon && <Icon src={item.icon} alt={item.name} />}
+            <span>{item.name}</span>
+          </SkillItem>
+        ))}
+      </SkillContainer>
+    </Card>
   )
 }
 
