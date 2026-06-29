@@ -4,20 +4,15 @@ import SkillSectionComponent from '../components/SkillSectionComponent'
 
 import figma from '../assets/logo/figma.svg'
 import canva from '../assets/logo/canva.svg'
-import html from '../assets/logo/html.svg'
 import css from '../assets/logo/css.svg'
 import javascript from '../assets/logo/javascript.svg'
 import react from '../assets/logo/react.svg'
 import next from '../assets/logo/next.svg'
-import tailwind from '../assets/logo/tailwind.svg'
-import styledcomponent from '../assets/logo/styled.svg'
 import node from '../assets/logo/node.svg'
 import express from '../assets/logo/express.svg'
 import mongodb from '../assets/logo/mongodb.svg'
 import postman from '../assets/logo/postman.svg'
 import git from '../assets/logo/git.svg'
-import github from '../assets/logo/github.svg'
-import vscode from '../assets/logo/vscode.svg'
 
 const skillSet = [
   {
@@ -69,24 +64,23 @@ const skillSet = [
   },
 ]
 
-
 const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 32px;
-  padding: 80px 0;
-  height: 100vh;
+  padding: 180px 0;
+  min-height: 100vh;
   width: 100vw;
   background-color: #f9f9f9;
   user-select: none;
+  overflow-x: hidden;
 
   @media (max-width: 960px) {
-    /* padding: 8px 8px; */
-    gap: 8px;
+    gap: 24px;
+    padding: 120px 0;
   }
-
 `
 const Title = styled.h1`
   color: #000;
@@ -99,6 +93,7 @@ const Title = styled.h1`
   top: 20px;
   left: 20px;
   position:fixed;
+  z-index: 10;
 
   @media (max-width: 768px) {
     font-size: 32px;
@@ -122,13 +117,29 @@ const Subtitle = styled.h2`
   @media (max-width: 768px) {
     display: none;
   }
+`
 
+const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 40px;
+  z-index: 2;
+  margin-top: 0px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+    gap: 24px;
+  }
 `
 
 const SkillPage = () => {
   return (
     <Container
-    className="skillPage"
+      className="skillPage"
       initial={{ y: window.innerHeight }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', duration: 1.5, delay: 0.5 }}
@@ -137,17 +148,16 @@ const SkillPage = () => {
       <Title>Skills</Title>
       <Subtitle>Learning everyday💡</Subtitle>
 
-      {skillSet.map(({ skillType, skill },index) => (
-        <SkillSectionComponent
-          key={skillType}
-          skillType={skillType}
-          skill={skill}
-          index={index}
-        />
-      ))}
-          
-        
-
+      <GridContainer>
+        {skillSet.map(({ skillType, skill }, index) => (
+          <SkillSectionComponent
+            key={skillType}
+            skillType={skillType}
+            skill={skill}
+            index={index}
+          />
+        ))}
+      </GridContainer>
     </Container>
   )
 }
