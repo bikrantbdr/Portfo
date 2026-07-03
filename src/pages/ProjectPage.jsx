@@ -5,6 +5,7 @@ import tcioe from "../assets/project/tcioe.png"
 import lit from "../assets/project/lit.jpeg"
 import gericht from "../assets/project/gericht.jpeg"
 import dormden from "../assets/project/dormden.jpeg"
+import jcd from "../assets/project/jesus-dream-church.vercel.app_.png"
 
 const Container = styled(motion.div)`
   display: flex;
@@ -43,6 +44,18 @@ const Subtitle = styled.h2`
 `
 
 const Data = [
+  {
+    title: 'Jesus Dream Church',
+    date: ' 2026',
+    image: jcd,
+    description: 'Digital presense for Jesus Dream Church Frankfurt. An interactive and modern website with event management, sermon archives and many more features',
+    tech: ['Next.js', 'React', 'Tailwindcss'],
+    link: {
+      github:'https://github.com/bikrantbdr/Jesus-Dream-Church',
+      live:'https://jesus-dream-church.vercel.app/'
+    },
+    translate: '-60%',
+  },
   {
     title: 'TCIOE ',
     date: 'July 2023',
